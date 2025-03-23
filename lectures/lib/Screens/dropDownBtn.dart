@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class DropdownbtnClass extends StatefulWidget {
@@ -15,10 +17,9 @@ class _DropdownbtnClassState extends State<DropdownbtnClass> {
      'Select value'
   ];
   String? initValue = 'Select value';
-  Color c = Colors.white;
+  Color? c ;
   @override
   Widget build(BuildContext context) {
-
 
     return Scaffold(
       backgroundColor: c,
@@ -27,7 +28,7 @@ class _DropdownbtnClassState extends State<DropdownbtnClass> {
       ),
       body: Center(
         child: DropdownButton(
-          value:initValue,
+           value:initValue,
           items: colors.map((color) { //color = red
            return DropdownMenuItem(child: Text(color),value:color,);
           }).toList(),
@@ -35,10 +36,20 @@ class _DropdownbtnClassState extends State<DropdownbtnClass> {
             setState(() {
               initValue = tamara;
 
+              switch(initValue){
+                case 'red':
+                  c = Colors.grey;
+                  break;
+                case 'pink':
+                  c = Colors.pink;
+                  break;
+                case 'yellow':
+                  c = Colors.yellow;
+                  break;
+
+              }
             });
-
           },
-
 
         ),
       ),
