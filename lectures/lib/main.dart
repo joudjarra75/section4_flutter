@@ -3,6 +3,8 @@ import 'package:flutter_section4/Screens/ListView.dart';
 import 'package:flutter_section4/Screens/btnStateFul.dart';
 import 'package:flutter_section4/Screens/dropDownBtn.dart';
 import 'package:flutter_section4/Screens/gridViewBuilder.dart';
+import 'package:flutter_section4/navigation/based_class.dart';
+import 'package:flutter_section4/navigation/const_route.dart';
 import 'Screens/gridTask.dart';
 import 'Screens/gridView.dart';
 import 'Screens/homeScreen.dart';
@@ -18,7 +20,10 @@ class BaseScreenApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      home:TextfieldClass(),
+      initialRoute: route1,
+      onGenerateRoute: RouteClass.generator,
+
+      // home:TextfieldClass(),
 
     );
 
