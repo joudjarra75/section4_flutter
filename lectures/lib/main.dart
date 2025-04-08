@@ -5,6 +5,10 @@ import 'package:flutter_section4/Screens/dropDownBtn.dart';
 import 'package:flutter_section4/Screens/gridViewBuilder.dart';
 import 'package:flutter_section4/navigation/based_class.dart';
 import 'package:flutter_section4/navigation/const_route.dart';
+import 'package:flutter_section4/pass%20data/pass%20with%20arguments/pageFour.dart';
+import 'package:flutter_section4/pass%20data/pass%20with%20arguments/pageOne.dart';
+import 'package:flutter_section4/pass%20data/pass%20with%20arguments/pageThree.dart';
+import 'package:flutter_section4/pass%20data/pass%20with%20arguments/pageTwo.dart';
 import 'Screens/gridTask.dart';
 import 'Screens/gridView.dart';
 import 'Screens/homeScreen.dart';
@@ -20,10 +24,13 @@ class BaseScreenApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp(
-      initialRoute: route1,
-      onGenerateRoute: RouteClass.generator,
-
-      // home:TextfieldClass(),
+      // initialRoute: route1,
+      // onGenerateRoute: RouteClass.generator,
+routes: {
+  'pageOne' :(context) => Pageone(),
+  'pageTwo' :(context) => Pagetwo(),
+},
+      home:Pagethree(),
 
     );
 

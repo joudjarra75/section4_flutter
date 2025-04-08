@@ -14,7 +14,11 @@ class _ScreenoneState extends State<Screenone> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow,
-        title: Text('Screen One'),
+        title: InkWell
+          (onTap: (){
+            print("Yellow");
+        },
+            child: Text('Screen One')),
 
       ),
 
