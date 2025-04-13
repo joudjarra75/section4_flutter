@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'midProject/navBar.dart';
 import 'package:flutter_section4/Screens/ListView.dart';
 import 'package:flutter_section4/Screens/btnStateFul.dart';
 import 'package:flutter_section4/Screens/dropDownBtn.dart';
 import 'package:flutter_section4/Screens/gridViewBuilder.dart';
+import 'package:flutter_section4/midProject/navBar.dart';
 import 'package:flutter_section4/navigation/based_class.dart';
 import 'package:flutter_section4/navigation/const_route.dart';
 import 'package:flutter_section4/pass%20data/pass%20with%20arguments/pageFour.dart';
@@ -23,14 +25,17 @@ class BaseScreenApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return MaterialApp(
+    return MaterialApp(theme: ThemeData(
+      // bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.blueGrey)
+    ),
       // initialRoute: route1,
       // onGenerateRoute: RouteClass.generator,
 routes: {
   'pageOne' :(context) => Pageone(),
   'pageTwo' :(context) => Pagetwo(),
 },
-      home:Pagethree(),
+      home:NavbarClass(),
+      debugShowCheckedModeBanner: false,
 
     );
 
