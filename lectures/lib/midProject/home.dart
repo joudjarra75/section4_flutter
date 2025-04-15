@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_section4/midProject/cardClass.dart';
+import 'package:flutter_section4/midProject/product.dart';
 
 class HomeScreenNav extends StatefulWidget {
-  const HomeScreenNav({super.key});
+  List<Product> items ;
+  Function(Product) onPerssed;
+   HomeScreenNav({required this.items,required this.onPerssed});
 
   @override
   State<HomeScreenNav> createState() => _HomeScreenNavState();
@@ -9,6 +13,22 @@ class HomeScreenNav extends StatefulWidget {
 
 class _HomeScreenNavState extends State<HomeScreenNav> {
   bool isCheck = false;
+
+  // List<Map<String,dynamic>> products = [
+  //   {'name':'latte','price':1.3,'isFav':false},
+  //   {'name':'ice latte','price':1.3,'isFav':false},
+  //   {'name':'coffee','price':1,'isFav':false},
+  //   {'name':'mocha','price':1.5,'isFav':false},
+  //   {'name':'spanish latte','price':1.5,'isFav':false},
+  //   {'name':'latte','price':1.3,'isFav':false},
+  //   {'name':'ice latte','price':1.3,'isFav':false},
+  //   {'name':'coffee','price':1,'isFav':false},
+  //   {'name':'mocha','price':1.5,'isFav':false},
+  //   {'name':'spanish latte','price':1.5,'isFav':false},
+  //
+  // ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,31 +71,9 @@ class _HomeScreenNavState extends State<HomeScreenNav> {
 Expanded(
   child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (context, index) {
-    return Card(
-      child: Stack(
-        children: [
-          Container(
-            child: Center(child: Icon(Icons.star)),
-          ),
-          InkWell(
-            child: isCheck? Icon(Icons.favorite,color: Colors.red,) : Icon(Icons.favorite_border),
-            onTap: (){
-              setState(() {
-                isCheck = !isCheck;
-              });
-            },
-          )
-
-          
-        ],
-      )
-
-      
-    
-
-    );
+    return Cardclass(product:widget.items[index] ,onPerss: widget.onPerssed,);
       },
-    itemCount: 20,
+    itemCount: widget.items.length,
   ),
 )
         ]
