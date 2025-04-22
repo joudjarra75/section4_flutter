@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_section4/Screens/gestureDetector.dart';
+import 'package:flutter_section4/Screens/inkwell.dart';
+import 'package:flutter_section4/responsive/layoutResponsive.dart';
+import 'package:flutter_section4/responsive/mobile.dart';
+import 'package:flutter_section4/responsive/web.dart';
 import 'midProject/navBar.dart';
 import 'package:flutter_section4/Screens/ListView.dart';
 import 'package:flutter_section4/Screens/btnStateFul.dart';
@@ -35,7 +40,7 @@ routes: {
   'pageOne' :(context) => Pageone(),
   'pageTwo' :(context) => Pagetwo(),
 },
-      home:NavbarClass(),
+      home:GesturedetectorClass(),
       debugShowCheckedModeBanner: false,
 
 
